@@ -2,7 +2,9 @@
 
 @section ('content')
 
+@auth
 <a href={{{ route('games_create') }}}>Create</a>
+@endauth
 
 @foreach ($games as $game)
 
