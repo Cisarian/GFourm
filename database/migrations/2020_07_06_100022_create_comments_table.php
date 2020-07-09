@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('posts_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('categories_id');
             $table->timestamps();
 
             $table->foreign('posts_id')
@@ -30,6 +31,12 @@ class CreateCommentsTable extends Migration
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+
+            $table->foreign('categories_id')
+                  ->references('id')
+                  ->on('categories')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
         });

@@ -32,6 +32,7 @@ Route::get('/fourm/{slug}/create', 'CategoryController@create')->name('create_ca
 Route::post('/fourm/{slug}', 'CategoryController@store') -> name('category_store');
 Route::get('/fourm/{game_slug}/{category_slug}/edit', 'CategoryController@edit') ->name('category_edit');
 Route::put('/fourm/{game_slug}/{category_slug}/', 'CategoryController@update') ->name('category_update');
+Route::get('/fourm/post/show_all/{category}', 'CategoryController@showAll')->name('category_show_all');
 
 
 //Post

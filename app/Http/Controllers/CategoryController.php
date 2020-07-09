@@ -151,6 +151,15 @@ class CategoryController extends Controller
         }  
         return false; 
     }
+
+    public function showAll(Category $category)
+    {
+
+        $comments = $category -> comment;
+        return view('category.comments', ['comments' => $comments,
+                                          'category' => $category]);
+
+    }
 }
 
 

@@ -44,6 +44,7 @@ class CommentController extends Controller
             'user_comment' => 'required',
         ]);
         $validateData['posts_id'] = $post->id;
+        $validateData['categories_id'] = $post->categories_id;
         $validateData['user_id'] = Auth::user()->id;
         $validateData['name'] = Auth::user()->name;
         Comment::create($validateData);

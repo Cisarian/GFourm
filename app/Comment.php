@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    protected $fillable = ['user_comment', 'posts_id', 'user_id', 'name'];
+    protected $fillable = ['user_comment', 'posts_id', 'user_id', 'name', 'categories_id'];
 
     public function post()
     {
@@ -17,4 +17,10 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function comment()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
 }

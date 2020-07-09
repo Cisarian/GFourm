@@ -10,6 +10,7 @@
 @forelse($categories as $category)
 <p><a href={{{ route('post_list', [$game->slug, $category->slug]) }}}>{{$category->title}}</a>
 <a href={{{ route('category_edit', [$game->slug, $category->slug]) }}}>Edit</a>
+<a href={{{ route('category_show_all', $category) }}}>Show All</a>
 </p>
 @empty
 <h1>No Categories Here</h1>
