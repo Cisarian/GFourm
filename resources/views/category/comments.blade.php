@@ -6,7 +6,7 @@
 
 @foreach ($comments as $comment)
 <p>
-user: {{$comment->name}}     
+user: {{$comment->name}}        
 message: {{ $comment->user_comment}}
 <p>
 
