@@ -76,7 +76,7 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
-                    <a href="{{ route('games_index') }}">fourms</a>
+                    <a href="{{ route('games_index') }}">forum</a>
                 </div>
             @endif
 

@@ -15,7 +15,7 @@ class GamesController extends Controller
     public function index()
     {
         $games = Games::all();
-        return view('fourm.index', ['games'=>$games]);
+        return view('forum.index', ['games'=>$games]);
     }
 
     /**
@@ -25,7 +25,7 @@ class GamesController extends Controller
      */
     public function create()
     {
-        return view('fourm.create');
+        return view('forum.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class GamesController extends Controller
         $validation = 1;
 
         if (Games::where('slug', $validateData['slug'])->exists()){
-            return view('fourm.create', ['validation' => $validation,
+            return view('forum.create', ['validation' => $validation,
                                          'title' => $validateData['title']]);
         } else {
             Games::create($validateData);  
@@ -63,7 +63,7 @@ class GamesController extends Controller
     public function show(Games $games)
     {
        
-        return view('fourms.categories'. ['categories'-> $games]);        
+        return view('forum.categories'. ['categories'-> $games]);        
     }
 
     /**
@@ -76,7 +76,7 @@ class GamesController extends Controller
     {
         $games = Games::where('slug', $slug) ->firstOrFail();
         
-        return view('fourm.create', ['games' => $games]);
+        return view('forum.create', ['games' => $games]);
     }
 
     /**
@@ -97,7 +97,7 @@ class GamesController extends Controller
 
 
         if (Games::where('slug', $validateData['slug'])->exists()){
-            return view('fourm.create', ['validation' => $validation,
+            return view('forum.create', ['validation' => $validation,
                                          'title' => $validateData['title'],
                                          'games' => $games]);
         } else {
